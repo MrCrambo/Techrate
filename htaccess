@@ -1,0 +1,21 @@
+ErrorDocument 403 /404.html
+ErrorDocument 404 /404.html
+
+DirectoryIndex page4681909.html
+
+RewriteEngine On
+
+RewriteCond %{HTTP:X-Scheme} =http
+RewriteRule ^(.*)$ https://%{HTTP_HOST}/$1 [R=301,L]
+
+RewriteCond %{REQUEST_FILENAME} /robots.txt
+RewriteCond "%{DOCUMENT_ROOT}/robots_%{HTTP_HOST}.txt" -f
+RewriteRule ^(.*)$ robots_%{HTTP_HOST}.txt [NC,L]
+RewriteRule ^sto_lifecycle$ page4759901.html [NC]
+RewriteRule ^sto_lifecycle/$ page4759901.html [NC]
+
+RewriteRule ^unit_tests$ page4760661.html [NC]
+RewriteRule ^unit_tests/$ page4760661.html [NC]
+
+RewriteRule ^favicon.ico$ https://static.tildacdn.com/tild3534-3735-4233-b665-313638353339/favicon.ico [R=302,L]
+
